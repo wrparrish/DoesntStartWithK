@@ -1,10 +1,10 @@
 package com.ruthlessprogramming.doesntstartwithk.Presenter.list_movies.rec_view
 
 import android.content.Context
-import android.graphics.Movie
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.ruthlessprogramming.doesntstartwithk.Model.Movie
 
 import com.ruthlessprogramming.doesntstartwithk.R
 
