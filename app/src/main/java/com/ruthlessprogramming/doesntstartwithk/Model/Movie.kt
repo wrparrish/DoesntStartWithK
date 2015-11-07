@@ -1,4 +1,4 @@
-package com.ruthlessprogramming.doesntstartwithk
+package com.ruthlessprogramming.doesntstartwithk.Model
 
 /**
  * Created by williamparrish on 11/1/15.

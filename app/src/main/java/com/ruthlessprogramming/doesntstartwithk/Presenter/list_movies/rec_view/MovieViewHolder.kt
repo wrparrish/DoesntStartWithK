@@ -1,4 +1,4 @@
-package com.ruthlessprogramming.doesntstartwithk
+package com.ruthlessprogramming.doesntstartwithk.Presenter.list_movies.rec_view
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
