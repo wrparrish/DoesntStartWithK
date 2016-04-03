@@ -3,8 +3,10 @@ package com.ruthlessprogramming.doesntstartwithk.Model
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
-import fuel.core.Either
-import fuel.httpGet
+import com.github.kittinunf.fuel.android.extension.responseJson
+import com.github.kittinunf.fuel.httpGet
+import com.github.kittinunf.result.Result
+
 import org.jetbrains.anko.async
 import org.jetbrains.anko.uiThread
 import org.json.JSONArray
@@ -19,19 +21,19 @@ import java.net.URL
 class EventRequest(val context: Context,val url :String){
     private val TAG = javaClass.simpleName
 
-    public fun run(){
+    fun run(){
 
 
 
-        async {
+        async() {
 
           url.httpGet().responseJson { request, response, either ->
                 //do something with response
                 when (either) {
-                    is Either.Left -> Log.e(javaClass.simpleName , response.toString())
+                    is Result.Failure -> Log.e(javaClass.simpleName , response.toString())
 
 
-                    is Either.Right -> {
+                    is Result.Success -> {
                         Log.d(javaClass.simpleName, response.toString())
 
                     }
@@ -43,7 +45,7 @@ class EventRequest(val context: Context,val url :String){
         }
 
 
-        async {
+        async() {
             val jsonResponseString = URL(url).readText()
             Log.d(TAG , jsonResponseString)
 

@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.ruthlessprogramming.doesntstartwithk.R
 import org.jetbrains.anko.find
-import kotlinx.android.synthetic.row_movie.*
+
 /**
  * Created by williamparrish on 11/1/15.
  */

@@ -3,11 +3,14 @@ package com.ruthlessprogramming.doesntstartwithk
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.View
 import android.view.Menu
 import android.view.MenuItem
 import com.ruthlessprogramming.doesntstartwithk.View.ListEvents.EventListActivity
-import kotlinx.android.synthetic.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.*
+
+
 
 class MainActivity : AppCompatActivity() {
 
