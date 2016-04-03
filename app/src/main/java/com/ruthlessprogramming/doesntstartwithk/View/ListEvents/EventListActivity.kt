@@ -52,7 +52,7 @@ class EventListActivity : Activity(){
     }
 
     fun getEventsFromApi(){
-        val url  = "http://api.seatgeek.com/2/events?geoip=true"
+        val url  = "https://api.seatgeek.com/2/events?geoip=true"
         val apiRequest : EventRequest = EventRequest(applicationContext ,url)
         apiRequest.run()
 
