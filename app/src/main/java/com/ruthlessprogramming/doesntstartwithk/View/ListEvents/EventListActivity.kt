@@ -9,10 +9,7 @@ import com.ruthlessprogramming.doesntstartwithk.Model.Event
 import com.ruthlessprogramming.doesntstartwithk.Model.EventRequest
 import com.ruthlessprogramming.doesntstartwithk.Presenter.list_movies.rec_view.EventAdapter
 import com.ruthlessprogramming.doesntstartwithk.R
-import kotlinx.android.synthetic.screen_event_list.*
-import org.jetbrains.anko.async
-import org.jetbrains.anko.find
-import org.jetbrains.anko.uiThread
+
 import java.net.URL
 import java.util.*
 
@@ -42,7 +39,7 @@ class EventListActivity : Activity(){
 
     fun setupRecView(){
 
-        val recyclerView : RecyclerView = find(R.id.rv_movie_list)
+        val recyclerView : RecyclerView = findViewById(R.id.rv_movie_list) as RecyclerView
 
         val layoutManager : LinearLayoutManager = LinearLayoutManager(applicationContext)
         val orientation : Int = LinearLayoutManager.VERTICAL
