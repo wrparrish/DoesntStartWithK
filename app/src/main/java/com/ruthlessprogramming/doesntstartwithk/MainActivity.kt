@@ -7,9 +7,11 @@ import android.support.v7.widget.Toolbar
 import android.view.View
 import android.view.Menu
 import android.view.MenuItem
+import com.ruthlessprogramming.doesntstartwithk.Model.Event
+import com.ruthlessprogramming.doesntstartwithk.Model.EventResponse
 import com.ruthlessprogramming.doesntstartwithk.View.ListEvents.EventListActivity
 import kotlinx.android.synthetic.main.activity_main.*
-
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,18 +21,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-
-        fab.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View) {
-                val intent : Intent = Intent()
-                intent.setClass(applicationContext, EventListActivity::class.java)
-                        startActivity(intent)
-
-
-
-
-            }
-        })
+        fab.setOnClickListener {
+            val intent : Intent = Intent()
+            intent.setClass(applicationContext, EventListActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

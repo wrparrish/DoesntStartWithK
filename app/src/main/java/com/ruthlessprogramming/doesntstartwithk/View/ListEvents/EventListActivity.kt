@@ -24,7 +24,7 @@ class EventListActivity : Activity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.screen_event_list)
         Log.d("kotlin",  "onCreateView")
-        val event1 : Event  = Event("no url yet" , "max max")
+        val event1 : Event  = Event("no url yet" , "mad max")
         val event2 : Event  = Event("still no url" , "predator")
         events.add(0, event1)
         events.add(1, event2)

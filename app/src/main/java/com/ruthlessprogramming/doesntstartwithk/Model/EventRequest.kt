@@ -18,19 +18,18 @@ import java.net.URL
  * Created by williamparrish on 11/9/15.
  */
 
-class EventRequest(val context: Context,val url :String){
+class EventRequest(val context: Context, val url: String) {
     private val TAG = javaClass.simpleName
 
-    fun run(){
-
+    fun run() {
 
 
         async() {
 
-          url.httpGet().responseJson { request, response, either ->
+            url.httpGet().responseJson { request, response, either ->
                 //do something with response
                 when (either) {
-                    is Result.Failure -> Log.e(javaClass.simpleName , response.toString())
+                    is Result.Failure -> Log.e(javaClass.simpleName, response.toString())
 
 
                     is Result.Success -> {
@@ -47,22 +46,22 @@ class EventRequest(val context: Context,val url :String){
 
         async() {
             val jsonResponseString = URL(url).readText()
-            Log.d(TAG , jsonResponseString)
+            Log.d(TAG, jsonResponseString)
 
             val jsonObject = JSONObject(jsonResponseString)
-            Log.d(TAG , jsonObject.toString())
+            Log.d(TAG, jsonObject.toString())
 
-            val jsonArray :JSONArray  = jsonObject.getJSONArray("events")
-            Log.d("array length" ,"" + jsonArray.length())
+            val jsonArray: JSONArray = jsonObject.getJSONArray("events")
+            Log.d("array length", "" + jsonArray.length())
 
-            for (i: Int in 0..jsonArray.length()-1){
-                Log.d("title from event objects: "  , "" +  jsonArray.get(i).toString())
+            for (i: Int in 0..jsonArray.length() - 1) {
+                Log.d("title from event objects: ", "" + jsonArray.get(i).toString())
             }
 
 
 
 
-            uiThread {Toast.makeText(context, "url opened", Toast.LENGTH_LONG).show()    }
+            uiThread { Toast.makeText(context, "url opened", Toast.LENGTH_LONG).show() }
         }
 
     }
