@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.ruthlessprogramming.doesntstartwithk.Model.Event
+import com.ruthlessprogramming.doesntstartwithk.Model.EventResponse
 
 import com.ruthlessprogramming.doesntstartwithk.R
 
@@ -13,19 +14,18 @@ import com.ruthlessprogramming.doesntstartwithk.R
  */
 
 
-class EventAdapter(val context: Context, val inflater: LayoutInflater, val events : List<Event>) : RecyclerView.Adapter<EventViewHolder>(){
+class EventAdapter(val context: Context, val inflater: LayoutInflater, val response : EventResponse?) : RecyclerView.Adapter<EventViewHolder>(){
 
 
     override fun onBindViewHolder(holder: EventViewHolder?, position: Int) {
-         var movie : Event = events[position]
-        holder?.title?.text = movie.title
+
 
 
 
     }
 
     override fun getItemCount(): Int {
-        return events.size
+        return response?.events?.size as Int
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): EventViewHolder? {
