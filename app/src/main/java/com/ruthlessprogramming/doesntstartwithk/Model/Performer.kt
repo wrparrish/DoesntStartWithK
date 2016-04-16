@@ -99,7 +99,7 @@ class Performer {
      */
     @SerializedName("score")
     @Expose
-    var score: Int? = null
+    var score: Float? = null
     /**
      * @return The images
      */
