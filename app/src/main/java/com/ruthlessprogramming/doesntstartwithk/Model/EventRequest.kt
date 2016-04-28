@@ -1,8 +1,6 @@
 package com.ruthlessprogramming.doesntstartwithk.Model
 
-import android.content.Context
 import android.util.Log
-import org.jetbrains.anko.async
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
@@ -18,11 +16,12 @@ class EventRequest() {
     fun run() {
 
         api.getEvents()
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe({ eventResponse ->
-           Log.d(TAG,"size of list: ${eventResponse.events.size}" )
-            })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ eventResponse ->
+                    Log.d(TAG, "size of list: ${eventResponse.events.size}")
+                    eventResponse.events.asIterable().forEach { Log.e(TAG, it.title + " : [" + it.venue?.name + "]" ) }
+                })
 
     }
 }
