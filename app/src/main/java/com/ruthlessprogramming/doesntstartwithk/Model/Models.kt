@@ -72,6 +72,8 @@ data class Venue(val city: String,
                  val timezone: String,
                  val id: Int)
 
+data class Images(val huge: String)
+
 
 
 
