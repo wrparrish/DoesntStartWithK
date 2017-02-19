@@ -1,4 +1,5 @@
-package com.ruthlessprogramming.doesntstartwithk.Model
+package com.ruthlessprogramming.doesntstartwithk.data.server
+
 
 /**
  * Created by billyparrish on 2/17/17 for DoesntStartWithK.
@@ -33,7 +34,7 @@ data class Performer(val stats: Stats,
                      val divisions: Any,
                      val url: String,
                      val type: String,
-                     val image: Any,
+                     val image: String,
                      val home_venue_id: Any,
                      val slug: String,
                      val score: Double,
@@ -73,6 +74,8 @@ data class Venue(val city: String,
                  val id: Int)
 
 data class Images(val huge: String)
+
+data class EventResponse(val meta: EventResponse, val events: List<Event>)
 
 
 

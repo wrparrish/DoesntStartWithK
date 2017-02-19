@@ -1,4 +1,4 @@
-package com.ruthlessprogramming.doesntstartwithk.Presenter.list_movies.rec_view
+package com.ruthlessprogramming.doesntstartwithk.ui.rec_view
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -13,8 +13,8 @@ import org.jetbrains.anko.find
 
 class EventViewHolder(view : View) : RecyclerView.ViewHolder(view) {
 
-    var image: ImageView? = view.find(R.id.iv_row_movie)
-    var title: TextView? = view.find(R.id.tv_title_movie)
+    var image: ImageView = view.find(R.id.iv_row_movie)
+    var title: TextView = view.find(R.id.tv_title_movie)
 
 
 
