@@ -12,10 +12,6 @@ import org.jetbrains.anko.find
  */
 
 class EventViewHolder(view : View) : RecyclerView.ViewHolder(view) {
-
-    var image: ImageView = view.find(R.id.iv_row_movie)
-    var title: TextView = view.find(R.id.tv_title_movie)
-
-
-
+    var image: ImageView = view.find(R.id.iv_row_event)
+    var title: TextView = view.find(R.id.tv_title_event)
 }

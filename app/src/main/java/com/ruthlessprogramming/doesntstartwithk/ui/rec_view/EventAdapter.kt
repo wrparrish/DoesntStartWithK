@@ -18,8 +18,7 @@ class EventAdapter(val events: List<Event>) : RecyclerView.Adapter<EventViewHold
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         val event: Event = events[position]
         holder.title.text = event.name
-        val imageUrl =  event.performerImage ?: ""
-        holder.image.loadUrl(imageUrl)
+        event.performerImage?.let { holder.image.loadUrl(it) }
     }
 
     override fun getItemCount(): Int {

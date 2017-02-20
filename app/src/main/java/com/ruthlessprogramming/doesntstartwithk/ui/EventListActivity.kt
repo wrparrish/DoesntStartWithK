@@ -14,7 +14,6 @@ import org.jetbrains.anko.async
  */
 
 class EventListActivity : AppCompatActivity(){
-    val TAG = javaClass.simpleName
     val recyclerView by lazy { findViewById(R.id.rv_movie_list) as RecyclerView }
 
 
@@ -31,12 +30,11 @@ class EventListActivity : AppCompatActivity(){
         val orientation: Int = LinearLayoutManager.VERTICAL
         layoutManager.orientation = orientation
         recyclerView.layoutManager = layoutManager
-
     }
 
     fun getEventsFromApi() {
         async() {
-            val result = RequestEventsCommand().execute()
+            val result = RequestEventsCommand().execute().filter { !it.performerImage.isNullOrEmpty() }
             runOnUiThread {
                 val adapter: EventAdapter = EventAdapter(result)
                 recyclerView.adapter = adapter

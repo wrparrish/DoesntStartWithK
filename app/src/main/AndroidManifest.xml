@@ -11,10 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
-
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.ruthlessprogramming.doesntstartwithk.ui.EventListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -23,7 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.ruthlessprogramming.doesntstartwithk.ui.EventListActivity"/>
     </application>
 
 </manifest>
