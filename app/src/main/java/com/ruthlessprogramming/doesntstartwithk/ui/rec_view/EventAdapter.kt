@@ -15,10 +15,10 @@ import com.ruthlessprogramming.doesntstartwithk.loadUrl
 
 class EventAdapter(val events: List<Event>) : RecyclerView.Adapter<EventViewHolder>() {
 
-    override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: EventViewHolder?, position: Int) {
         val event: Event = events[position]
-        holder.title.text = event.name
-        event.performerImage?.let { holder.image.loadUrl(it) }
+        holder?.title?.text = event.name
+        event.performerImage?.let { holder?.image?.loadUrl(it) }
     }
 
     override fun getItemCount(): Int {

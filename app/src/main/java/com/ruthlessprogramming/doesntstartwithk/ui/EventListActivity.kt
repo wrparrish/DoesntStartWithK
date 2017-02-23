@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import com.ruthlessprogramming.doesntstartwithk.R
 import com.ruthlessprogramming.doesntstartwithk.domain.commands.RequestEventsCommand
 import com.ruthlessprogramming.doesntstartwithk.ui.rec_view.EventAdapter
@@ -34,8 +35,9 @@ class EventListActivity : AppCompatActivity(){
 
     fun getEventsFromApi() {
         async() {
-            val result = RequestEventsCommand().execute().filter { !it.performerImage.isNullOrEmpty() }
+            val result = RequestEventsCommand().execute()
             runOnUiThread {
+                Log.e("test", "Run on ui thread with result [" + result + "]")
                 val adapter: EventAdapter = EventAdapter(result)
                 recyclerView.adapter = adapter
             }

@@ -8,7 +8,7 @@ import com.ruthlessprogramming.doesntstartwithk.domain.model.Event
 
 interface EventDataSource {
 
-    fun requestEventsByGeoIp(): List<Event>?
+    fun requestEventsByGeoIp():  List<Event>?
 
     fun requestEventById(id: Int): Event?
 
